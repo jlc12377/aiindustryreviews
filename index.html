@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AI Industry Reviews — Independent Rankings of AI Tools & Platforms</title>
+<meta name="description" content="Not all AI is created equal. We rank AI tools by what they're actually best at — chatbots, coding, image generation, writing, video, and automation. Find the right tool for the right job.">
+<link rel="canonical" href="https://aiindustryreviews.com/">
+<meta property="og:title" content="AI Industry Reviews — Independent AI Tool Rankings">
+<meta property="og:description" content="Find the best AI tools for every use case. Expert rankings backed by data from G2, Capterra, and real-world testing.">
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --navy:#0b0d1a;--navy-mid:#12152e;--navy-light:#1a1e3a;
+  --purple:#8b5cf6;--purple-soft:#a78bfa;--purple-pale:#ede9fe;--purple-wash:#f5f3ff;
+  --cyan:#06b6d4;--cyan-soft:#22d3ee;--cyan-pale:#cffafe;--cyan-wash:#ecfeff;
+  --pink:#ec4899;--pink-pale:#fce7f3;
+  --emerald:#10b981;--emerald-pale:#d1fae5;--emerald-wash:#ecfdf5;
+  --amber:#d97706;--amber-pale:#fef3c7;
+  --surface:#ffffff;--surface-2:#f8f8fa;--surface-3:#f0f0f4;
+  --ink:#0f0f1a;--ink-2:#334155;--ink-3:#64748b;--ink-4:#94a3b8;
+  --border:#e5e5ec;--border-light:#f1f1f6;
+  --radius:8px;--radius-lg:12px;--radius-xl:16px;
+  --shadow-sm:0 1px 2px rgba(15,15,26,.05);--shadow-md:0 4px 12px rgba(15,15,26,.08);--shadow-lg:0 12px 40px rgba(15,15,26,.1);
+  --font-display:'Instrument Serif',Georgia,serif;--font-body:'Outfit',-apple-system,sans-serif;
+  --max-w:1200px;--nav-h:60px;
+}
+*{margin:0;padding:0;box-sizing:border-box}html{scroll-behavior:smooth}
+body{font-family:var(--font-body);color:var(--ink);background:var(--surface);-webkit-font-smoothing:antialiased;line-height:1.6}
+@keyframes fadeUp{from{opacity:0;transform:translateY(20px)}to{opacity:1;transform:translateY(0)}}
+.fade-up{animation:fadeUp .6s ease both}
+
+.nav{position:fixed;top:0;left:0;right:0;z-index:100;background:rgba(255,255,255,.94);backdrop-filter:blur(16px);border-bottom:1px solid var(--border-light);height:var(--nav-h);transition:box-shadow .3s}
+.nav.scrolled{box-shadow:var(--shadow-sm);border-color:var(--border)}
+.nav-inner{max-width:var(--max-w);margin:0 auto;padding:0 28px;height:100%;display:flex;align-items:center;justify-content:space-between}
+.nav-brand{display:flex;align-items:center;gap:10px;text-decoration:none}
+.nav-logo-mark{width:32px;height:32px;border-radius:8px;background:linear-gradient(135deg,var(--purple),var(--cyan));display:flex;align-items:center;justify-content:center;font-family:var(--font-display);font-size:18px;color:#fff;font-style:italic;letter-spacing:-1px}
+.nav-logo-text{font-size:15px;font-weight:600;color:var(--ink);letter-spacing:-.3px}
+.nav-logo-text span{color:var(--purple)}
+.nav-links{display:flex;gap:28px;align-items:center}
+.nav-links a{font-size:13.5px;font-weight:500;color:var(--ink-2);text-decoration:none;transition:color .2s}
+.nav-links a:hover{color:var(--purple)}
+.nav-cta{background:var(--navy)!important;color:#fff!important;padding:8px 18px!important;border-radius:6px!important;font-weight:600!important}
+.nav-cta:hover{background:var(--navy-mid)!important}
+.mobile-menu-btn{display:none;background:none;border:none;cursor:pointer;padding:8px;flex-direction:column;gap:4px}
+.mobile-menu-btn span{display:block;width:20px;height:2px;background:var(--ink);border-radius:1px}
+
+.hero{padding:calc(var(--nav-h) + 56px) 28px 72px;background:var(--navy);position:relative;overflow:hidden}
+.hero::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse at 20% 80%,rgba(139,92,246,.12) 0%,transparent 50%),radial-gradient(ellipse at 80% 20%,rgba(6,182,212,.08) 0%,transparent 50%);pointer-events:none}
+.hero::after{content:'';position:absolute;inset:0;background-image:linear-gradient(rgba(255,255,255,.02) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.02) 1px,transparent 1px);background-size:60px 60px;pointer-events:none}
+.hero-inner{max-width:var(--max-w);margin:0 auto;position:relative;z-index:1;display:grid;grid-template-columns:1fr 400px;gap:56px;align-items:center}
+.hero-tag{display:inline-flex;align-items:center;gap:6px;background:rgba(139,92,246,.15);border:1px solid rgba(139,92,246,.25);padding:5px 14px;border-radius:20px;font-size:12px;font-weight:600;color:var(--purple-soft);letter-spacing:.04em;text-transform:uppercase;margin-bottom:20px}
+.hero-tag-dot{width:6px;height:6px;border-radius:50%;background:var(--cyan);animation:pulse 2s ease infinite}
+@keyframes pulse{0%,100%{opacity:1}50%{opacity:.6}}
+.hero h1{font-family:var(--font-display);font-size:52px;font-weight:400;line-height:1.12;letter-spacing:-1.5px;color:#fff;margin-bottom:20px}
+.hero h1 em{font-style:italic;color:var(--purple-soft)}
+.hero-sub{font-size:16.5px;color:rgba(255,255,255,.5);max-width:480px;margin-bottom:36px;line-height:1.7}
+.hero-search{display:flex;background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.12);border-radius:var(--radius-lg);overflow:hidden;max-width:500px;transition:border-color .2s}
+.hero-search:focus-within{border-color:rgba(139,92,246,.5);background:rgba(255,255,255,.12)}
+.hero-search input{flex:1;border:none;padding:14px 18px;font-size:14px;font-family:var(--font-body);outline:none;color:#fff;background:transparent}
+.hero-search input::placeholder{color:rgba(255,255,255,.3)}
+.hero-search button{background:var(--purple);color:#fff;border:none;padding:14px 24px;font-family:var(--font-body);font-size:13px;font-weight:600;cursor:pointer;transition:background .2s;white-space:nowrap}
+.hero-search button:hover{background:var(--purple-soft)}
+.hero-metrics{display:flex;gap:32px;margin-top:40px;padding-top:28px;border-top:1px solid rgba(255,255,255,.08)}
+.hero-metric-num{font-family:var(--font-display);font-size:32px;color:#fff;letter-spacing:-1px;line-height:1}
+.hero-metric-label{font-size:12px;color:rgba(255,255,255,.35);font-weight:500;margin-top:4px}
+.hero-sidebar{background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.08);border-radius:var(--radius-xl);padding:24px;backdrop-filter:blur(8px)}
+.hero-sidebar-title{font-size:12px;font-weight:700;text-transform:uppercase;letter-spacing:.1em;color:var(--purple-soft);margin-bottom:18px;display:flex;align-items:center;gap:8px}
+.hero-sidebar-item{display:flex;align-items:start;gap:14px;padding:14px 10px;margin:0 -10px;border-radius:8px;text-decoration:none;transition:background .15s;cursor:pointer}
+.hero-sidebar-item:hover{background:rgba(255,255,255,.05)}
+.hero-sidebar-item+.hero-sidebar-item{border-top:1px solid rgba(255,255,255,.06)}
+.hero-sidebar-rank{width:28px;height:28px;border-radius:6px;background:rgba(139,92,246,.15);display:flex;align-items:center;justify-content:center;font-size:12px;font-weight:700;color:var(--purple-soft);flex-shrink:0;margin-top:2px}
+.hero-sidebar-text{font-size:14px;font-weight:500;color:rgba(255,255,255,.85);line-height:1.35}
+.hero-sidebar-meta{font-size:11.5px;color:rgba(255,255,255,.35);margin-top:3px}
+
+.trust-bar{background:var(--surface-2);border-bottom:1px solid var(--border-light);padding:16px 28px}
+.trust-bar-inner{max-width:var(--max-w);margin:0 auto;display:flex;align-items:center;justify-content:center;gap:40px;font-size:12px;color:var(--ink-4);font-weight:500}
+.trust-bar-inner span{display:flex;align-items:center;gap:6px}
+
+.section{max-width:var(--max-w);margin:0 auto;padding:72px 28px}
+.section-eyebrow{font-size:11.5px;font-weight:700;text-transform:uppercase;letter-spacing:.1em;color:var(--purple);margin-bottom:8px}
+.section-title{font-family:var(--font-display);font-size:34px;font-weight:400;letter-spacing:-.8px;color:var(--ink);line-height:1.2}
+.section-sub{font-size:15px;color:var(--ink-3);margin-top:8px;max-width:500px}
+.section-header{display:flex;justify-content:space-between;align-items:flex-end;margin-bottom:36px}
+.section-more{font-size:13px;font-weight:600;color:var(--purple);text-decoration:none;white-space:nowrap}
+.section-more:hover{text-decoration:underline}
+
+.cat-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
+.cat-card{background:var(--surface);border:1px solid var(--border);border-radius:var(--radius-lg);padding:24px 20px;text-decoration:none;color:var(--ink);transition:all .25s;position:relative;overflow:hidden}
+.cat-card:hover{border-color:var(--purple);box-shadow:var(--shadow-md);transform:translateY(-2px)}
+.cat-card-icon{width:44px;height:44px;border-radius:10px;display:flex;align-items:center;justify-content:center;margin-bottom:14px;font-size:20px}
+.cat-card-icon.purple{background:var(--purple-wash)}.cat-card-icon.cyan{background:var(--cyan-wash)}.cat-card-icon.pink{background:var(--pink-pale)}.cat-card-icon.emerald{background:var(--emerald-wash)}.cat-card-icon.amber{background:var(--amber-pale)}.cat-card-icon.slate{background:var(--surface-3)}
+.cat-card-name{font-size:15px;font-weight:600;margin-bottom:4px}
+.cat-card-count{font-size:12.5px;color:var(--ink-4)}
+.cat-card-desc{font-size:13px;color:var(--ink-3);margin-top:6px;line-height:1.5}
+.cat-card-arrow{position:absolute;top:20px;right:18px;font-size:14px;color:var(--ink-4);transition:all .2s;opacity:0;transform:translateX(-4px)}
+.cat-card:hover .cat-card-arrow{opacity:1;transform:translateX(0)}
+
+.method-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:24px;margin-top:36px}
+.method-card{text-align:center;padding:24px 12px}
+.method-num{width:40px;height:40px;border-radius:50%;background:var(--navy);color:#fff;display:flex;align-items:center;justify-content:center;font-family:var(--font-display);font-size:18px;font-style:italic;margin:0 auto 14px}
+.method-label{font-size:14px;font-weight:600;color:var(--ink);margin-bottom:6px}
+.method-desc{font-size:13px;color:var(--ink-3);line-height:1.55}
+
+.cta{background:var(--navy);text-align:center;padding:80px 28px;position:relative;overflow:hidden}
+.cta::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse at 30% 50%,rgba(139,92,246,.1) 0%,transparent 50%),radial-gradient(ellipse at 70% 60%,rgba(6,182,212,.06) 0%,transparent 40%);pointer-events:none}
+.cta h2{font-family:var(--font-display);font-size:36px;font-weight:400;color:#fff;letter-spacing:-.8px;margin-bottom:12px;position:relative}
+.cta p{font-size:16px;color:rgba(255,255,255,.45);margin-bottom:28px;max-width:460px;margin-left:auto;margin-right:auto;position:relative}
+.cta-btn{display:inline-flex;align-items:center;gap:8px;padding:14px 32px;background:var(--purple);color:#fff;font-size:14px;font-weight:600;border-radius:8px;text-decoration:none;transition:background .2s;position:relative}
+.cta-btn:hover{background:var(--purple-soft)}
+
+.footer{background:var(--ink);padding:64px 28px 40px}
+.footer-inner{max-width:var(--max-w);margin:0 auto;display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:48px}
+.footer-brand-mark{display:flex;align-items:center;gap:10px;margin-bottom:14px}
+.footer-logo{width:28px;height:28px;border-radius:6px;background:linear-gradient(135deg,var(--purple),var(--cyan));display:flex;align-items:center;justify-content:center;font-family:var(--font-display);font-size:16px;color:#fff;font-style:italic}
+.footer-brand-name{font-size:14px;font-weight:600;color:#fff}.footer-brand-name span{color:var(--purple-soft)}
+.footer-desc{font-size:13px;color:rgba(255,255,255,.35);line-height:1.6;max-width:280px}
+.footer-col-title{font-size:11.5px;font-weight:700;text-transform:uppercase;letter-spacing:.1em;color:rgba(255,255,255,.5);margin-bottom:16px}
+.footer-col a{display:block;font-size:13.5px;color:rgba(255,255,255,.4);text-decoration:none;margin-bottom:10px;transition:color .2s}
+.footer-col a:hover{color:var(--purple-soft)}
+.footer-bottom{max-width:var(--max-w);margin:40px auto 0;padding:20px 0 0;border-top:1px solid rgba(255,255,255,.08);display:flex;justify-content:space-between;font-size:12px;color:rgba(255,255,255,.25)}
+.footer-bottom a{color:rgba(255,255,255,.3);text-decoration:none;margin-left:20px}
+
+@media(max-width:900px){
+  .hero-inner{grid-template-columns:1fr;gap:36px}.hero h1{font-size:36px}
+  .cat-grid{grid-template-columns:1fr}.method-grid{grid-template-columns:repeat(2,1fr)}
+  .footer-inner{grid-template-columns:1fr 1fr}
+  .nav-links{display:none;position:absolute;top:var(--nav-h);left:0;right:0;background:var(--surface);flex-direction:column;padding:20px 28px;border-bottom:1px solid var(--border);gap:16px;box-shadow:var(--shadow-md)}
+  .nav-links.open{display:flex}.mobile-menu-btn{display:flex}
+  .trust-bar-inner{flex-wrap:wrap;gap:16px;justify-content:center}.hero-metrics{gap:20px;flex-wrap:wrap}
+  .section-header{flex-direction:column;align-items:flex-start;gap:12px}
+}
+@media(max-width:480px){.cat-grid{grid-template-columns:1fr}.hero h1{font-size:30px}.section-title{font-size:26px}}
+</style>
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"WebSite","name":"AI Industry Reviews","url":"https://aiindustryreviews.com","description":"Independent, data-driven rankings of AI tools and platforms across chatbots, coding assistants, image generators, writing tools, and more.","publisher":{"@type":"Organization","name":"AI Industry Reviews"}}
+</script>
+</head>
+<body>
+
+<nav class="nav" id="mainNav">
+  <div class="nav-inner">
+    <a href="/" class="nav-brand"><div class="nav-logo-mark">Ai</div><div class="nav-logo-text">AI Industry <span>Reviews</span></div></a>
+    <div class="nav-links">
+      <a href="/pages/chatbot-rankings.html">Top 10 Lists</a>
+      <a href="#">Research</a>
+      <a href="/pages/methodology.html">Methodology</a>
+      <a href="/pages/pricing.html" class="nav-cta">Get Listed</a>
+    </div>
+    <button class="mobile-menu-btn" onclick="document.querySelector('.nav-links').classList.toggle('open')" aria-label="Menu"><span></span><span></span><span></span></button>
+  </div>
+</nav>
+
+<section class="hero">
+  <div class="hero-inner">
+    <div class="fade-up">
+      <div class="hero-tag"><span class="hero-tag-dot"></span> Updated March 2026</div>
+      <h1>Not all AI is <em>created equal</em></h1>
+      <p class="hero-sub">ChatGPT excels at conversation. Claude dominates coding. Midjourney owns image quality. Every AI tool has a sweet spot — and a blind spot. We rank them by what they're actually best at, so you choose the right tool for the right job.</p>
+      <div class="hero-search">
+        <input type="text" placeholder="Search AI tools (e.g. &quot;best AI for coding&quot;)">
+        <button>Search</button>
+      </div>
+      <div class="hero-metrics">
+        <div><div class="hero-metric-num">60+</div><div class="hero-metric-label">AI Tools Ranked</div></div>
+        <div><div class="hero-metric-num">6</div><div class="hero-metric-label">Categories</div></div>
+        <div><div class="hero-metric-num">45k+</div><div class="hero-metric-label">Reviews Analyzed</div></div>
+      </div>
+    </div>
+    <div class="hero-sidebar">
+      <div class="hero-sidebar-title">Trending rankings</div>
+      <a href="/pages/chatbot-rankings.html" class="hero-sidebar-item">
+        <div class="hero-sidebar-rank">1</div>
+        <div><div class="hero-sidebar-text">Best AI Chatbots & Assistants — 2026</div><div class="hero-sidebar-meta">ChatGPT vs Claude vs Gemini vs Perplexity</div></div>
+      </a>
+      <a href="/pages/coding-rankings.html" class="hero-sidebar-item">
+        <div class="hero-sidebar-rank">2</div>
+        <div><div class="hero-sidebar-text">Best AI Coding Tools — 2026</div><div class="hero-sidebar-meta">Cursor vs Claude Code vs GitHub Copilot</div></div>
+      </a>
+      <a href="/pages/image-rankings.html" class="hero-sidebar-item">
+        <div class="hero-sidebar-rank">3</div>
+        <div><div class="hero-sidebar-text">Best AI Image Generators — 2026</div><div class="hero-sidebar-meta">Midjourney vs DALL-E 3 vs Stable Diffusion</div></div>
+      </a>
+      <a href="/pages/writing-rankings.html" class="hero-sidebar-item">
+        <div class="hero-sidebar-rank">4</div>
+        <div><div class="hero-sidebar-text">Best AI Writing Tools — 2026</div><div class="hero-sidebar-meta">Jasper vs Copy.ai vs Claude vs ChatGPT</div></div>
+      </a>
+    </div>
+  </div>
+</section>
+
+<div class="trust-bar">
+  <div class="trust-bar-inner">
+    <span>&#10003; Independent rankings</span>
+    <span>&#10003; No vendor influence</span>
+    <span>&#10003; Updated monthly</span>
+    <span>&#10003; Transparent methodology</span>
+    <span>&#10003; Part of the Listicle Liaison network</span>
+  </div>
+</div>
+
+<section class="section">
+  <div class="section-header">
+    <div><div class="section-eyebrow">Categories</div><div class="section-title">The best AI tool depends on what you need it for</div><div class="section-sub">Every category has a different leader. We rank them independently so you find the right fit.</div></div>
+  </div>
+  <div class="cat-grid">
+    <a href="/pages/chatbot-rankings.html" class="cat-card">
+      <div class="cat-card-icon purple">&#128172;</div>
+      <div class="cat-card-name">AI Chatbots & Assistants</div>
+      <div class="cat-card-count">10 tools ranked</div>
+      <div class="cat-card-desc">ChatGPT, Claude, Gemini, Perplexity, and more. General-purpose AI assistants for research, writing, analysis, and everyday tasks.</div>
+      <div class="cat-card-arrow">&rarr;</div>
+    </a>
+    <a href="/pages/coding-rankings.html" class="cat-card">
+      <div class="cat-card-icon cyan">&#128187;</div>
+      <div class="cat-card-name">AI Coding Tools</div>
+      <div class="cat-card-count">10 tools ranked</div>
+      <div class="cat-card-desc">Cursor, Claude Code, GitHub Copilot, Windsurf, and more. IDE assistants, code generation, and agentic development tools.</div>
+      <div class="cat-card-arrow">&rarr;</div>
+    </a>
+    <a href="/pages/image-rankings.html" class="cat-card">
+      <div class="cat-card-icon pink">&#127912;</div>
+      <div class="cat-card-name">AI Image Generators</div>
+      <div class="cat-card-count">10 tools ranked</div>
+      <div class="cat-card-desc">Midjourney, DALL-E 3, Stable Diffusion, Ideogram, and more. Text-to-image, editing, and commercial design tools.</div>
+      <div class="cat-card-arrow">&rarr;</div>
+    </a>
+    <a href="/pages/writing-rankings.html" class="cat-card">
+      <div class="cat-card-icon emerald">&#9997;</div>
+      <div class="cat-card-name">AI Writing Tools</div>
+      <div class="cat-card-count">10 tools ranked</div>
+      <div class="cat-card-desc">Jasper, Copy.ai, Notion AI, Grammarly, and more. Content creation, copywriting, editing, and marketing copy tools.</div>
+      <div class="cat-card-arrow">&rarr;</div>
+    </a>
+    <a href="/pages/video-rankings.html" class="cat-card">
+      <div class="cat-card-icon amber">&#127909;</div>
+      <div class="cat-card-name">AI Video Tools</div>
+      <div class="cat-card-count">10 tools ranked</div>
+      <div class="cat-card-desc">Sora, Synthesia, HeyGen, Runway, and more. Video generation, avatars, editing, and production tools.</div>
+      <div class="cat-card-arrow">&rarr;</div>
+    </a>
+    <a href="/pages/automation-rankings.html" class="cat-card">
+      <div class="cat-card-icon slate">&#9881;</div>
+      <div class="cat-card-name">AI Automation & Agents</div>
+      <div class="cat-card-count">10 tools ranked</div>
+      <div class="cat-card-desc">Zapier AI, n8n, Lindy, Make, and more. Workflow automation, AI agents, and no-code integration platforms.</div>
+      <div class="cat-card-arrow">&rarr;</div>
+    </a>
+  </div>
+</section>
+
+<div style="background:var(--surface-2);border-top:1px solid var(--border-light);border-bottom:1px solid var(--border-light)">
+  <div class="section">
+    <div class="section-header"><div><div class="section-eyebrow">Methodology</div><div class="section-title">How we rank AI tools</div><div class="section-sub">Every ranking is transparent, data-driven, and free from vendor influence.</div></div></div>
+    <div class="method-grid">
+      <div class="method-card"><div class="method-num">1</div><div class="method-label">Aggregate reviews</div><div class="method-desc">We pull scores from G2, Capterra, TrustRadius, Product Hunt, and community forums like Reddit.</div></div>
+      <div class="method-card"><div class="method-num">2</div><div class="method-label">Evaluate capabilities</div><div class="method-desc">Our editorial team tests each tool against real-world tasks specific to its category.</div></div>
+      <div class="method-card"><div class="method-num">3</div><div class="method-label">Score transparently</div><div class="method-desc">Every product gets a composite score with weighted criteria disclosed for each category.</div></div>
+      <div class="method-card"><div class="method-num">4</div><div class="method-label">Update monthly</div><div class="method-desc">AI moves fast. We refresh rankings monthly to reflect new releases, pricing changes, and capability updates.</div></div>
+    </div>
+  </div>
+</div>
+
+<section class="cta">
+  <h2>Build an AI tool? Get ranked.</h2>
+  <p>Claim your product profile or upgrade to a Featured placement for premium visibility in the fastest-growing software category.</p>
+  <a href="/pages/pricing.html" class="cta-btn">View Listing Plans &rarr;</a>
+</section>
+
+<footer class="footer">
+  <div class="footer-inner">
+    <div><div class="footer-brand-mark"><div class="footer-logo">Ai</div><div class="footer-brand-name">AI Industry <span>Reviews</span></div></div><p class="footer-desc">Independent, data-driven rankings of AI tools and platforms. Part of the Listicle Liaison publishing network.</p></div>
+    <div class="footer-col"><div class="footer-col-title">Rankings</div><a href="/pages/chatbot-rankings.html">AI Chatbots</a><a href="/pages/coding-rankings.html">AI Coding Tools</a><a href="/pages/image-rankings.html">AI Image Generators</a><a href="/pages/writing-rankings.html">AI Writing Tools</a><a href="/pages/video-rankings.html">AI Video Tools</a><a href="/pages/automation-rankings.html">AI Automation</a></div>
+    <div class="footer-col"><div class="footer-col-title">Company</div><a href="#">About</a><a href="/pages/methodology.html">Methodology</a><a href="#">Contact</a></div>
+    <div class="footer-col"><div class="footer-col-title">For Companies</div><a href="/pages/pricing.html">Listing Plans</a><a href="#">Partner With Us</a></div>
+  </div>
+  <div class="footer-bottom"><span>&copy; 2026 AI Industry Reviews. Part of the Listicle Liaison network.</span><span><a href="#">Privacy</a><a href="#">Terms</a></span></div>
+</footer>
+
+<script>window.addEventListener('scroll',()=>{document.getElementById('mainNav').classList.toggle('scrolled',window.scrollY>10)})</script>
+</body>
+</html>
