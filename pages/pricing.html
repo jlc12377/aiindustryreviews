@@ -48,7 +48,7 @@ body{font-family:var(--font-body);color:var(--ink);background:var(--surface);-we
 .toggle-btn{padding:10px 24px;border-radius:6px;border:none;font-family:var(--font-body);font-size:14px;font-weight:600;cursor:pointer;transition:all .2s;background:transparent;color:var(--ink-3)}
 .toggle-btn.active{background:var(--navy);color:#fff}
 .save{font-size:11px;font-weight:600;color:var(--emerald);margin-left:4px}
-.pricing-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+.pricing-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:16px}
 .price-card{background:var(--surface);border:1px solid var(--border);border-radius:var(--radius-xl);padding:36px 28px;transition:all .25s;position:relative}
 .price-card:hover{box-shadow:var(--shadow-lg);transform:translateY(-3px)}
 .price-card.popular{border:2px solid var(--purple)}
@@ -109,11 +109,26 @@ body{font-family:var(--font-body);color:var(--ink);background:var(--surface);-we
 
   <div class="pricing-grid">
     <div class="price-card">
+      <div class="price-card-name">Basic Listing</div>
+      <div class="price-card-desc">Get your company added to our category rankings with a public profile, composite score, and basic description.</div>
+      <div class="price-card-price" id="price-basic">$49<span>/mo</span></div>
+      <div class="price-card-billing" id="billing-basic"></div>
+      <ul class="price-card-features">
+        <li>Appear in category rankings</li>
+        <li>Company name and description</li>
+        <li>Composite score displayed</li>
+        <li>Public profile page</li>
+      </ul>
+      <a href="https://buy.stripe.com/fZudRadq39Qv74H6pFd7q0e" class="price-card-btn primary" id="btn-basic">Get Listed</a>
+    </div>
+
+    <div class="price-card">
       <div class="price-card-name">Claimed Profile</div>
       <div class="price-card-desc">Claim and customize your company profile with branded logo, custom description, direct website link, and verified badge.</div>
       <div class="price-card-price" id="price-claimed">$99<span>/mo</span></div>
       <div class="price-card-billing" id="billing-claimed"></div>
       <ul class="price-card-features">
+        <li>Everything in Basic Listing</li>
         <li>Branded logo placement</li>
         <li>Custom company description</li>
         <li>Direct website link</li>
@@ -206,17 +221,18 @@ body{font-family:var(--font-body);color:var(--ink);background:var(--surface);-we
 <script>
 window.addEventListener('scroll',function(){document.getElementById('mainNav').classList.toggle('scrolled',window.scrollY>10)});
 var links = {
+  basic: { monthly:'https://buy.stripe.com/fZudRadq39Qv74H6pFd7q0e', semi:'https://buy.stripe.com/fZudRadq39Qv74H6pFd7q0e', annual:'https://buy.stripe.com/fZudRadq39Qv74H6pFd7q0e' },
   claimed: { monthly:'https://buy.stripe.com/cNi8wQ3Pt3s7bkXdS7d7q04', semi:'https://buy.stripe.com/bJe5kE5XBaUz1Kn6pFd7q05', annual:'https://buy.stripe.com/fZu8wQfyb8Mr9cP01hd7q06' },
   enhanced: { monthly:'https://buy.stripe.com/3cI8wQdq3geT9cP5lBd7q07', semi:'https://buy.stripe.com/9B6dRa71F9Qv3Sv9BRd7q08', annual:'https://buy.stripe.com/6oU4gAfybaUz3SveWbd7q0a' },
   featured: { monthly:'https://buy.stripe.com/8x214obhV9Qv3Sv5lBd7q00', semi:'https://buy.stripe.com/cNifZi0DhgeT1KneWbd7q01', annual:'https://buy.stripe.com/eVq8wQ5XBe6LfBd5lBd7q03' }
 };
-var prices = { claimed:{monthly:'$99',semi:'$564',annual:'$1,069'}, enhanced:{monthly:'$299',semi:'$1,704',annual:'$3,229'}, featured:{monthly:'$699',semi:'$3,985',annual:'$7,550'} };
-var perMonth = { claimed:{monthly:'',semi:'$94/mo equivalent',annual:'$89/mo equivalent'}, enhanced:{monthly:'',semi:'$284/mo equivalent',annual:'$269/mo equivalent'}, featured:{monthly:'',semi:'$664/mo equivalent',annual:'$629/mo equivalent'} };
+var prices = { basic:{monthly:'$49',semi:'$279',annual:'$529'}, claimed:{monthly:'$99',semi:'$564',annual:'$1,069'}, enhanced:{monthly:'$299',semi:'$1,704',annual:'$3,229'}, featured:{monthly:'$699',semi:'$3,985',annual:'$7,550'} };
+var perMonth = { basic:{monthly:'',semi:'$46/mo equivalent',annual:'$44/mo equivalent'}, claimed:{monthly:'',semi:'$94/mo equivalent',annual:'$89/mo equivalent'}, enhanced:{monthly:'',semi:'$284/mo equivalent',annual:'$269/mo equivalent'}, featured:{monthly:'',semi:'$664/mo equivalent',annual:'$629/mo equivalent'} };
 var suffix = { monthly:'/mo', semi:' every 6 months', annual:'/year' };
 function setBilling(period) {
   document.querySelectorAll('.toggle-btn').forEach(function(b){b.classList.remove('active')});
   event.target.closest('.toggle-btn').classList.add('active');
-  ['claimed','enhanced','featured'].forEach(function(tier) {
+  ['basic','claimed','enhanced','featured'].forEach(function(tier) {
     document.getElementById('price-'+tier).innerHTML = prices[tier][period] + '<span>' + suffix[period] + '</span>';
     document.getElementById('billing-'+tier).textContent = perMonth[tier][period];
     document.getElementById('btn-'+tier).href = links[tier][period];
